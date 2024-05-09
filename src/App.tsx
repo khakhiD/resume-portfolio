@@ -60,9 +60,6 @@ function App() {
         <Window className="window">
           <WindowHeader active={true} className="window-title">
             <span>Hello-World.exe</span>
-            <Button>
-              <span className="close-icon" />
-            </Button>
           </WindowHeader>
           <WindowContent>안녕하세요</WindowContent>
         </Window>
