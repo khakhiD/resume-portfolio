@@ -36,8 +36,19 @@ body {
   min-height: 100vh; */
   background: #222;
   color: #fff;
-  /* background-image: url('isometric-grid.svg');
+  /* background-image: url('grid.png');
   background-repeat: repeat; */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background: url('grid.png') 0 0 repeat;
+    transform: rotate(-25deg) skew(25deg);
+  }
 }
 
 .progress-bar {
@@ -45,16 +56,35 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--red);
+  height: 5px;
+  background: var(--white);
   transform-origin: 0%;
 }
 
-.hero {
-  max-width: 700px;
+.hero > span {
+  max-width: fit-content;
   display: flex;
 
   color: #fff;
-  font-size: 50px;
-  transform: rotate(-28deg) skew(25deg);
+  font-size: 130px;
+  transform: rotate(-25deg) skew(25deg);
+}
+
+.hero {
+  position: absolute;
+  right: 20%;
+  top: 30%;
+}
+
+.window {
+  position: absolute;
+  top: 30%;
+  right: -35%;
+  width: 500px;
+  height: 300px;
+  transform: rotate(-25deg) skew(25deg);
+}
+
+.windowContent {
+  font-size: 30px;
 }
