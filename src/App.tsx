@@ -1,20 +1,17 @@
-import {
-  MenuList,
-  MenuListItem,
-  styleReset,
-  Window,
-  WindowContent,
-  WindowHeader,
-  Button,
-} from 'react95';
+import { styleReset } from 'react95';
+import Menu from './components/Menu';
+import Hero from './components/Hero';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { motion, useScroll } from 'framer-motion';
-import Hero from './components/Hero/Hero';
+import styled from 'styled-components';
 
 /* Pick a theme of your choice */
-import aiee from 'react95/dist/themes/aiee';
+import blackAndWhite from 'react95/dist/themes/blackAndWhite';
+// import aiee from 'react95/dist/themes';
+// import fxDev from 'react95/dist/themes';
+// import vistaesqueMidnight from 'react95/dist/themes';
+// import blue from 'react95/dist/themes/darkTeal';
 
-/* Original Windows95 font (optional) */
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 
@@ -32,8 +29,15 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold;
     font-style: normal
   }
+  @font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+     unicode-range: U+AC00-D7A3;
+}
   body, input, select, textarea {
-    font-family: 'ms_sans_serif';
+    font-family: 'ms_sans_serif', 'DungGeunMo';
   }
 `;
 
@@ -47,24 +51,9 @@ function App() {
         style={{ scaleX: scrollYProgress }}
       />
       <GlobalStyles />
-      <ThemeProvider theme={aiee}>
-        <MenuList>
-          <MenuListItem>About</MenuListItem>
-          <MenuListItem>Experience</MenuListItem>
-          <MenuListItem>Projects</MenuListItem>
-          <MenuListItem>Education</MenuListItem>
-        </MenuList>
-        <section className="section-2">
-          <div className="section-box-1" />
-        </section>
-        <Window className="window">
-          <WindowHeader active={true} className="window-title">
-            <span>Hello-World.exe</span>
-          </WindowHeader>
-          <WindowContent>안녕하세요</WindowContent>
-        </Window>
+      <ThemeProvider theme={blackAndWhite}>
+        <Menu />
         <Hero />
-        <h1>Background Image Transformations</h1>
       </ThemeProvider>
     </>
   );
