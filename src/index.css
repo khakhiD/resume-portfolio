@@ -19,10 +19,11 @@ body {
   --rotate: rotate(-25deg);
 
   overflow-x: hidden;
-  background-color: #242424; /* #202020*/
+  background-color: #242424;
+  background-image: url('gird-big.png');
 
   /* background image - grid pattern */
-  &::before {
+  /* &::before {
     content: '';
     position: absolute;
     width: 500%;
@@ -32,8 +33,7 @@ body {
     z-index: -1;
     background: url('grid.png') 0 0 repeat;
     transform: rotate(-25deg) skew(25deg);
-    /* transform: rotateX(45deg) rotateZ(-30deg); */
-  }
+  } */
 }
 
 .section1 {
