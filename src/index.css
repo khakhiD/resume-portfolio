@@ -20,7 +20,7 @@ body {
 
   overflow-x: hidden;
   background-color: #242424;
-  background-image: url('gird-big.png');
+  background-image: url('grid-big.png');
 
   /* background image - grid pattern */
   /* &::before {
