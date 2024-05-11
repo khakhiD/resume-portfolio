@@ -3,15 +3,7 @@ import Menu from './components/Menu';
 import Hero from './components/Hero';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { motion, useScroll } from 'framer-motion';
-import styled from 'styled-components';
-
-/* Pick a theme of your choice */
 import blackAndWhite from 'react95/dist/themes/blackAndWhite';
-// import aiee from 'react95/dist/themes';
-// import fxDev from 'react95/dist/themes';
-// import vistaesqueMidnight from 'react95/dist/themes';
-// import blue from 'react95/dist/themes/darkTeal';
-
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 
@@ -52,8 +44,10 @@ function App() {
       />
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
-        <Menu />
-        <Hero />
+        <section className="section1">
+          <Hero />
+          <Menu />
+        </section>
       </ThemeProvider>
     </>
   );

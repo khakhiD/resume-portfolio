@@ -1,67 +1,118 @@
-import { MenuList, MenuListItem, Separator, Handle } from 'react95';
+import { MenuList, MenuListItem, Separator } from 'react95';
 import styled from 'styled-components';
+
+const ICONS = {
+  GITHUB: '/icons/github.svg',
+  LINKEDIN: '/icons/linkedin.svg',
+  EMAIL: '/icons/mail.svg',
+  BLOG: '/icons/blog.svg',
+};
+
+const Shadow = styled.div`
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: -45px 45px 10px rgba(0, 0, 0, 0.2);
+`;
 
 const Wrapper = styled.div`
   display: flex;
-  position: absolute;
-  top: 25%;
-  left: 30%;
   align-items: center;
-
-  & > * {
-    margin-right: 1rem;
-  }
-
-  transform: rotate(-25deg) skew(25deg);
+  width: fit-content;
+  position: relative;
+  top: -150px;
+  left: -100px;
+  transform: var(--rotate) var(--skew);
 
   .menu-item-header {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   .menu-item {
-    margin-left: 0.2em;
-    margin-right: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5em;
+  }
+
+  .icons {
+    width: 28px;
+    fill: red;
+    z-index: 1;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    bottom: -8px;
+    left: 0px;
+    width: 100%;
+    height: 8px;
+    background-color: #494949;
+    transform: translateX(-4px) skew(-45deg);
+  }
+
+  &::after {
+    top: 0px;
+    left: -8px;
+    width: 8px;
+    height: 100%;
+    background-color: #898d90;
+    transform: translateY(4px) skew(0, -45deg);
   }
 `;
 
 const Menu = () => {
   return (
-    <Wrapper>
-      {/* <MenuList>
-        <MenuListItem primary>Photos</MenuListItem>
-        <MenuListItem
-        // TODO: Come up with a more elegant way to allow props when `as` is used
-        >
-          Link
-        </MenuListItem>
-        <MenuListItem disabled>Other</MenuListItem>
-      </MenuList> */}
-      <MenuList inline className="menu-list" fullWidth>
-        <MenuListItem square disabled className="menu-item-header">
-          <span role="img" aria-label="🔗">
-            🔗
-          </span>
-        </MenuListItem>
-        <Handle size={38} />
-        <MenuListItem className="menu-item">
-          <a href="https://github.com/khakhid">Github</a>
-        </MenuListItem>
-        <MenuListItem className="menu-item">Linkedin</MenuListItem>
-        <MenuListItem className="menu-item">Email</MenuListItem>
-        <MenuListItem className="menu-item">Blog</MenuListItem>
-      </MenuList>
-      {/* <MenuList>
-        <MenuListItem primary size="sm">
-          View
-        </MenuListItem>
-        <Separator />
-        <MenuListItem size="sm">Paste</MenuListItem>
-        <MenuListItem size="sm">Paste Shortcut</MenuListItem>
-        <MenuListItem size="sm">Undo Copy</MenuListItem>
-        <Separator />
-        <MenuListItem size="sm">Properties</MenuListItem>
-      </MenuList> */}
-    </Wrapper>
+    <>
+      <Wrapper>
+        <MenuList className="menu-list" fullWidth>
+          <MenuListItem square disabled className="menu-item-header">
+            <span role="img" aria-label="🔗">
+              🔗
+            </span>
+          </MenuListItem>
+          <Separator />
+          <MenuListItem className="menu-item">
+            <span role="img" aria-label="github">
+              <a href="https://github.com/khakhid">
+                <object data={ICONS.GITHUB} className="icons" />
+              </a>
+            </span>
+          </MenuListItem>
+          <MenuListItem className="menu-item">
+            <span role="img" aria-label="linkedin">
+              <a href="https://github.com/khakhid">
+                <object data={ICONS.LINKEDIN} className="icons" />
+              </a>
+            </span>
+          </MenuListItem>
+          <MenuListItem className="menu-item">
+            <span role="img" aria-label="email">
+              <a href="https://github.com/khakhid">
+                <object data={ICONS.EMAIL} className="icons" />
+              </a>
+            </span>
+          </MenuListItem>
+          <MenuListItem className="menu-item">
+            <span role="img" aria-label="blog">
+              <a href="https://github.com/khakhid">
+                <object data={ICONS.BLOG} className="icons" />
+              </a>
+            </span>
+          </MenuListItem>
+          <Shadow />
+        </MenuList>
+      </Wrapper>
+    </>
   );
 };
 
