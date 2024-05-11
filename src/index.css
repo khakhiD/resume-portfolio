@@ -18,7 +18,6 @@ body {
   --skew: skew(25deg);
   --rotate: rotate(-25deg);
 
-  overflow-x: hidden;
   background-color: #242424;
   background-image: url('grid-big.png');
 
@@ -32,7 +31,7 @@ body {
     left: -100%;
     z-index: -1;
     background: url('grid.png') 0 0 repeat;
-    transform: rotate(-25deg) skew(25deg);
+    transform: var(--rotate) var(--skew);
   } */
 }
 
