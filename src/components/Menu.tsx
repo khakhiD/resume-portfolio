@@ -1,12 +1,24 @@
 import { MenuList, MenuListItem, Separator } from 'react95';
 import styled from 'styled-components';
 
-const ICONS = {
-  GITHUB: '/icons/github.svg',
-  LINKEDIN: '/icons/linkedin.svg',
-  EMAIL: '/icons/mail.svg',
-  BLOG: '/icons/blog.svg',
-};
+const links = [
+  {
+    name: 'GITHUB',
+    icon: '/icons/github.svg',
+    link: 'https://github.com/khakhid',
+  },
+  {
+    name: 'LINKEDIN',
+    icon: '/icons/linkedin.svg',
+    link: 'https://linkedin.com',
+  },
+  { name: 'EMAIL', icon: '/icons/mail.svg', link: 'mailto:bfwanso@naver.com' },
+  {
+    name: 'BLOG',
+    icon: '/icons/blog.svg',
+    link: 'https://khakidiggin-log.vercel.app',
+  },
+];
 
 const Shadow = styled.div`
   transition: 0.3s;
@@ -37,12 +49,13 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding-top: 0.5em;
-  }
-
-  .icons {
-    width: 28px;
-    fill: red;
-    z-index: 1;
+    cursor: pointer;
+    .icons {
+      width: 28px;
+    }
+    &:hover {
+      background-color: var(--blue);
+    }
   }
 
   &::before,
@@ -81,34 +94,19 @@ const Menu = () => {
             </span>
           </MenuListItem>
           <Separator />
-          <MenuListItem className="menu-item">
-            <span role="img" aria-label="github">
-              <a href="https://github.com/khakhid">
-                <object data={ICONS.GITHUB} className="icons" />
-              </a>
-            </span>
-          </MenuListItem>
-          <MenuListItem className="menu-item">
-            <span role="img" aria-label="linkedin">
-              <a href="https://github.com/khakhid">
-                <object data={ICONS.LINKEDIN} className="icons" />
-              </a>
-            </span>
-          </MenuListItem>
-          <MenuListItem className="menu-item">
-            <span role="img" aria-label="email">
-              <a href="https://github.com/khakhid">
-                <object data={ICONS.EMAIL} className="icons" />
-              </a>
-            </span>
-          </MenuListItem>
-          <MenuListItem className="menu-item">
-            <span role="img" aria-label="blog">
-              <a href="https://github.com/khakhid">
-                <object data={ICONS.BLOG} className="icons" />
-              </a>
-            </span>
-          </MenuListItem>
+          {links.map((item, index) => (
+            <MenuListItem
+              key={index}
+              className="menu-item"
+              as="a"
+              // @ts-expect-error: react95
+              href={item.link}
+              target="_blank">
+              <span role="img" aria-label={item.name}>
+                <object data={item.icon} className="icons" />
+              </span>
+            </MenuListItem>
+          ))}
           <Shadow />
         </MenuList>
       </Wrapper>
