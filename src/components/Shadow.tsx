@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  box-shadow: -45px 45px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: -20px 40px 5px rgba(0, 0, 0, 0.2);
 `;
 
 const Shadow = () => {
