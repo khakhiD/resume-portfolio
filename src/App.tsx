@@ -1,6 +1,7 @@
 import { styleReset } from 'react95';
 import Menu from './components/Menu';
 import Hero from './components/Hero';
+import AboutBox from './components/AboutBox';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { motion, useScroll } from 'framer-motion';
 import blackAndWhite from 'react95/dist/themes/blackAndWhite';
@@ -22,11 +23,11 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal
   }
   @font-face {
-     font-family: 'DungGeunMo';
-     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
-     unicode-range: U+AC00-D7A3;
+    font-family: 'DungGeunMo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
 }
   body, input, select, textarea {
     font-family: 'ms_sans_serif', 'DungGeunMo';
@@ -45,6 +46,11 @@ function App() {
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
         <section className="section1">
+          <div className="about">
+            <AboutBox message="Born To Be" />
+            <AboutBox message="Deep Immersion" />
+            <AboutBox message="User Experience" />
+          </div>
           <Hero />
           <Menu />
         </section>
