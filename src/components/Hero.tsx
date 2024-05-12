@@ -8,18 +8,8 @@ import {
   ScrollView,
   Avatar,
 } from 'react95';
+import Shadow from './Shadow';
 import styled from 'styled-components';
-
-const Shadow = styled.div`
-  transition: 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  box-shadow: -45px 45px 10px rgba(0, 0, 0, 0.2);
-`;
 
 const Wrapper = styled.div`
   display: flex;
