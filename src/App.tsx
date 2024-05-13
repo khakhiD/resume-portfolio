@@ -7,6 +7,8 @@ import { motion, useScroll } from 'framer-motion';
 import blackAndWhite from 'react95/dist/themes/blackAndWhite';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
+import ScrollProgress from './components/ScrollProgress';
+import TopBar from './components/TopBar';
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -28,28 +30,30 @@ const GlobalStyles = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
     unicode-range: U+AC00-D7A3;
-}
+  }
+  @font-face {
+    font-family: 'PFStardust';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body, input, select, textarea {
     font-family: 'ms_sans_serif', 'DungGeunMo';
   }
 `;
 
 function App() {
-  const { scrollYProgress } = useScroll();
-
   return (
     <>
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
+        <ScrollProgress />
         <section className="section1">
           <div className="about">
-            <AboutBox message="Born To Be" />
-            <AboutBox message="Deep Immersion" />
-            <AboutBox message="User Experience" />
+            <AboutBox message="<Why Developer />" />
+            <AboutBox message="<Deep Immersion />" />
+            <AboutBox message="<User Experience />" />
           </div>
           <Hero />
           <Menu />
