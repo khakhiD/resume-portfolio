@@ -15,11 +15,18 @@ const Wrapper = styled.div`
   display: flex;
   position: relative;
   transform: var(--rotate) var(--skew);
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    /* transform: rotate(0) skew(0); */
+    translate: 0 -10px;
+  }
 
   &::before,
   &::after {
     content: '';
     position: absolute;
+    transition: opacity 0.3s ease;
   }
 
   &::before {

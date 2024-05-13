@@ -8,6 +8,12 @@ const Wrapper = styled.div`
   margin: auto;
   margin-bottom: 1.5em;
   transform: var(--rotate) var(--skew);
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    /* transform: rotate(0) skew(0); */
+    translate: 0 -10px;
+  }
 
   .arrow {
     padding-left: 10px;
