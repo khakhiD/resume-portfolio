@@ -46,7 +46,7 @@ function App() {
     <>
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
-        <section className="section-home">
+        <section className="screen section-home">
           <div className="about">
             <AboutBox message="<Why Developer />" />
             <AboutBox message="<Deep Immersion />" />
@@ -55,14 +55,20 @@ function App() {
           <Hero />
           <Menu />
         </section>
-        <section className="section-about">
+        <section className="screen section-about">
           <p>about section</p>
         </section>
-        <section className="section-project">
+        <section className="screen section-project">
           <p>project section</p>
         </section>
-        <section className="section-activity">
+        <section className="screen section-activity">
           <p>activity section</p>
+        </section>
+        <section className="screen section-education">
+          <p>education section</p>
+        </section>
+        <section className="screen section-">
+          <p>etcetera section</p>
         </section>
         <ScrollProgress />
       </ThemeProvider>
