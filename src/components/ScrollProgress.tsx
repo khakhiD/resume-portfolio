@@ -7,14 +7,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  position: fixed;
-  bottom: 3%;
-  right: 0;
-  margin-right: 30px;
 
   .scroll-progress {
-    background-color: #fff;
+    background-color: var(--blue);
     height: 30px;
     width: 200px;
   }
@@ -51,7 +46,7 @@ const ScrollProgress = () => {
   }, [handleScroll]);
 
   return (
-    <Wrapper>
+    <Wrapper className="progress-bar">
       <span className="scroll-text">SCROLL PROGRESS</span>
       <ProgressBar
         className="scroll-progress"

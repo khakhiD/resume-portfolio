@@ -46,7 +46,6 @@ function App() {
     <>
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
-        <ScrollProgress />
         <section className="section-home">
           <div className="about">
             <AboutBox message="<Why Developer />" />
@@ -56,6 +55,16 @@ function App() {
           <Hero />
           <Menu />
         </section>
+        <section className="section-about">
+          <p>about section</p>
+        </section>
+        <section className="section-project">
+          <p>project section</p>
+        </section>
+        <section className="section-activity">
+          <p>activity section</p>
+        </section>
+        <ScrollProgress />
       </ThemeProvider>
     </>
   );

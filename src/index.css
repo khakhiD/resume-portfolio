@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -20,38 +27,62 @@ body {
   --rotate: rotate(-5deg);
 
   background-color: var(--bg);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-body::before {
-  /* background image */
+/* background image */
+body::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
+  top: 100%;
+  left: 100%;
+  width: 500%;
+  height: 1000%;
   background: url('grid.png') repeat;
   transform: translate(-50%, -50%) var(--rotate) var(--skew);
   z-index: -1;
 }
 
-.section-home {
+/* sections */
+.section-home,
+.section-about,
+.section-project,
+.section-activity,
+.section-education {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  perspective: 500px;
+  scroll-snap-align: center;
+}
+
+.section-home {
   gap: 10%;
 }
 
+/* progress-bar */
 .progress-bar {
+  z-index: 10;
   position: fixed;
-  top: 0;
-  left: 0;
+  bottom: 2%;
   right: 0;
+  margin-right: 30px;
+}
+
+/* scroll-bar */
+::-webkit-scrollbar {
   height: 5px;
-  background: var(--blue);
-  transform-origin: 0%;
-  z-index: 1000;
+  width: 5px;
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--white);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg);
 }
