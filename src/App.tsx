@@ -47,7 +47,7 @@ function App() {
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
         <ScrollProgress />
-        <section className="section1">
+        <section className="section-home">
           <div className="about">
             <AboutBox message="<Why Developer />" />
             <AboutBox message="<Deep Immersion />" />
