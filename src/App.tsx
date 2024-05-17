@@ -3,12 +3,10 @@ import Menu from './components/Menu';
 import Hero from './components/Hero';
 import AboutBox from './components/AboutBox';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { motion, useScroll } from 'framer-motion';
 import blackAndWhite from 'react95/dist/themes/blackAndWhite';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import ScrollProgress from './components/ScrollProgress';
-import TopBar from './components/TopBar';
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
