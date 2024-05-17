@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   .scroll-progress {
-    background-color: var(--blue);
+    background-color: var(--white);
     height: 30px;
     width: 200px;
   }
@@ -50,7 +50,7 @@ const ScrollProgress = () => {
       <span className="scroll-text">SCROLL PROGRESS</span>
       <ProgressBar
         className="scroll-progress"
-        variant="default"
+        variant="tile"
         value={Math.floor(percent)}
         ref={progressRef}
       />
