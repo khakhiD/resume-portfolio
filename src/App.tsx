@@ -8,6 +8,8 @@ import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import ScrollProgress from './components/ScrollProgress';
 
+const GITHUB_URL = 'https://github.com/khakhid';
+
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
   @font-face {
@@ -72,6 +74,15 @@ function App() {
         </section>
         <ScrollProgress />
       </ThemeProvider>
+      <footer>
+        <span>
+          Copyright ⓒ 2024{' '}
+          <a href={GITHUB_URL} target="_blank">
+            KhakiD
+          </a>{' '}
+          all rights Reserved.
+        </span>
+      </footer>
     </>
   );
 }

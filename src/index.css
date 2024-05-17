@@ -23,6 +23,7 @@ body {
   --orange: #ee4444;
   --yellow: #ffcc00;
   --mustard: #ffaa00;
+  --darkgray: #727272;
   --skew: skew(10deg);
   --rotate: rotate(-5deg);
 
@@ -57,10 +58,8 @@ body::after {
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
-  -webkit-overflow-scrolling: touch;
   overscroll-behavior: none;
-  width: 100%;
-  height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .section-home {
@@ -90,4 +89,17 @@ body::after {
 
 ::-webkit-scrollbar-corner {
   background: var(--bg);
+}
+
+/* footer */
+footer {
+  position: absolute;
+  right: 5%;
+  color: var(--darkgray);
+  letter-spacing: 0.125em;
+  transform: translateY(-150px) var(--skew) var(--rotate);
+
+  & > span > a:hover {
+    color: var(--blue);
+  }
 }
