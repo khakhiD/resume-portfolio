@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: relative;
-  width: fit-content;
+  max-width: 700px;
   margin: auto;
   margin-bottom: 1.5em;
-  transform: var(--rotate) var(--skew);
+  /* transform: var(--rotate) var(--skew); */
   transition: 0.3s ease-in-out;
 
   &:hover {
@@ -15,9 +15,6 @@ const Wrapper = styled.div`
     translate: 0 -10px;
   }
 
-  .arrow {
-    padding-left: 10px;
-  }
   &::before,
   &::after {
     content: '';
@@ -42,10 +39,17 @@ const Wrapper = styled.div`
     transform: translateY(4px) skew(0, -45deg);
   }
 
+  & .bracket {
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    font-weight: 700;
+  }
+
   :hover {
-    background-color: var(--blue);
     cursor: pointer;
-    color: var(--white);
+    & .bracket {
+      color: var(--blue);
+    }
   }
 `;
 
@@ -60,9 +64,10 @@ const AboutBox = (props: AboutBoxProps) => {
         id="frame"
         variant="window"
         shadow
-        style={{ padding: '.75em', lineHeight: '1.5', maxWidth: '200px' }}>
+        style={{ padding: '.75em', lineHeight: '1.5', width: '100%' }}>
+        <span className="bracket">{'<'}</span>
         <span>{props.message}</span>
-        <span className="arrow">▼</span>
+        <span className="bracket">{' />'}</span>
       </Frame>
       <Shadow />
     </Wrapper>

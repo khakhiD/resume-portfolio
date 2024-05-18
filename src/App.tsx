@@ -1,12 +1,17 @@
 import { styleReset } from 'react95';
-import Menu from './components/Menu';
-import Hero from './components/Hero';
-import AboutBox from './components/AboutBox';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import blackAndWhite from 'react95/dist/themes/blackAndWhite';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import ScrollProgress from './components/ScrollProgress';
+import {
+  Home,
+  About,
+  Project,
+  Activity,
+  Education,
+  Etcetera,
+} from './components/Section';
 
 const GITHUB_URL = 'https://github.com/khakhid';
 
@@ -43,46 +48,36 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const Container = styled.main`
+  max-width: 1280px;
+  min-height: 700px;
+  margin: auto;
+`;
+
 function App() {
   return (
     <>
       <GlobalStyles />
       <ThemeProvider theme={blackAndWhite}>
-        <section className="screen section-home">
-          <div className="about">
-            <AboutBox message="<Why Developer />" />
-            <AboutBox message="<Deep Immersion />" />
-            <AboutBox message="<User Experience />" />
-          </div>
-          <Hero />
-          <Menu />
-        </section>
-        <section className="screen section-about">
-          <p>about section</p>
-        </section>
-        <section className="screen section-project">
-          <p>project section</p>
-        </section>
-        <section className="screen section-activity">
-          <p>activity section</p>
-        </section>
-        <section className="screen section-education">
-          <p>education section</p>
-        </section>
-        <section className="screen section-">
-          <p>etcetera section</p>
-        </section>
-        <ScrollProgress />
+        <Container>
+          <ScrollProgress />
+          <Home />
+          <About />
+          <Project />
+          <Activity />
+          <Education />
+          <Etcetera />
+        </Container>
+        <footer>
+          <span>
+            Copyright ⓒ 2024{' '}
+            <a href={GITHUB_URL} target="_blank">
+              KhakiD
+            </a>{' '}
+            all rights Reserved.
+          </span>
+        </footer>
       </ThemeProvider>
-      <footer>
-        <span>
-          Copyright ⓒ 2024{' '}
-          <a href={GITHUB_URL} target="_blank">
-            KhakiD
-          </a>{' '}
-          all rights Reserved.
-        </span>
-      </footer>
     </>
   );
 }
