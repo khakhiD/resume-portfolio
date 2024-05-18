@@ -41,19 +41,30 @@ body::after {
   height: 1000%;
   background: url('grid.png') repeat;
   transform: translate(-50%, -50%) var(--rotate) var(--skew);
+  /* animation: backgroundChange 200s linear infinite; */
   z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes backgroundChange {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 /* sections */
 .screen {
-  height: 100vh;
+  color: #fff;
+  scroll-snap-align: start;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  height: 100vh;
   perspective: 500px;
-  scroll-snap-align: center;
-  color: #fff;
 
   overflow-x: hidden;
   overflow-y: hidden;
@@ -63,7 +74,22 @@ body::after {
 }
 
 .section-home {
-  gap: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & .about {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    transform: var(--skew) var(--rotate);
+  }
+  & .about-box {
+    display: flex;
+    flex-flow: column;
+  }
 }
 
 /* progress-bar */
@@ -101,5 +127,36 @@ footer {
 
   & > span > a:hover {
     color: var(--blue);
+  }
+}
+
+/* close icon css */
+.close-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: -1px;
+  margin-top: -1px;
+  transform: rotateZ(45deg);
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    background: var(--black);
+  }
+  &:before {
+    height: 100%;
+    width: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:after {
+    height: 3px;
+    width: 100%;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
