@@ -26,9 +26,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: fit-content;
   position: relative;
-  top: -150px;
-  left: -100px;
-  transform: var(--rotate) var(--skew);
+  /* transform: var(--rotate) var(--skew); */
 
   .menu-item-header {
     font-size: 1.5em;

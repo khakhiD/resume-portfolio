@@ -14,7 +14,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   position: relative;
-  transform: var(--rotate) var(--skew);
+  /* transform: var(--rotate) var(--skew); */
   transition: 0.3s ease-in-out;
 
   &:hover {
