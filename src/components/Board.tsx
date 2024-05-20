@@ -14,9 +14,10 @@ interface BoardProps {
 const Wrapper = styled.div<BoardProps>`
   position: absolute;
   top: 15%;
+  left: 5%;
   width: ${(props) => props.width || '100%'};
   height: ${(props) => props.height || 'auto'};
-  border: ${(props) => (props.border ? '1px solid #fff' : 'none')};
+  border: ${(props) => (props.border ? '2px solid #fff' : 'none')};
   background-color: ${(props) => props.bgColor || 'var(--bg)'};
   color: ${(props) => props.color || 'var(--white)'};
   transform: var(--skew) var(--rotate);
