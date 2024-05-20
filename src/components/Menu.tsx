@@ -26,7 +26,6 @@ const Wrapper = styled.div`
   align-items: center;
   width: fit-content;
   position: relative;
-  /* transform: var(--rotate) var(--skew); */
 
   .menu-item-header {
     font-size: 1.5em;
@@ -38,11 +37,16 @@ const Wrapper = styled.div`
     justify-content: center;
     padding-top: 0.5em;
     cursor: pointer;
+    transition: 0.3s;
     .icons {
-      width: 28px;
+      width: 20px;
+      transition: 0.3s;
     }
     &:hover {
       background-color: var(--blue);
+      & .icons {
+        filter: invert();
+      }
     }
   }
 
@@ -91,7 +95,7 @@ const Menu = () => {
               href={item.link}
               target="_blank">
               <span role="img" aria-label={item.name}>
-                <object data={item.icon} className="icons" />
+                <img src={item.icon} className="icons" />
               </span>
             </MenuListItem>
           ))}
