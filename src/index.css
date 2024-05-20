@@ -39,7 +39,7 @@ body::after {
   left: 100%;
   width: 500%;
   height: 1000%;
-  background: url('grid.png') repeat;
+  background: url('/grid.png') repeat;
   transform: translate(-50%, -50%) var(--rotate) var(--skew);
   /* animation: backgroundChange 200s linear infinite; */
   z-index: -1;
