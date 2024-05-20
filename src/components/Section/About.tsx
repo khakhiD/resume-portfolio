@@ -4,7 +4,9 @@ import Board from '../Board';
 const About = () => {
   return (
     <section className="screen section-about">
-      <Board isHeader>About Me</Board>
+      <Board isHeader border width={'30%'}>
+        About Me
+      </Board>
       <p>about section</p>
     </section>
   );
